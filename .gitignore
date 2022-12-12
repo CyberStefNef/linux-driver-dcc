@@ -1,0 +1,9 @@
+**.cmd
+**.o
+**.d
+**.mod
+**.stash
+.vscode
+**.ko
+**symvers
+**.order
