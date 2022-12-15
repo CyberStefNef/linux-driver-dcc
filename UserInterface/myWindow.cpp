@@ -7,7 +7,6 @@ struct transferStruct strus={
 	.direction=0,
 	.motor_address=2,
 	.speed=0,
-	.light=0,
 };
 
 myWindow::myWindow()
