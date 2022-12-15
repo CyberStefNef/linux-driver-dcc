@@ -17,6 +17,10 @@ myWindow::myWindow()
 	comboBox_m2=new QComboBox();
 	checkBox_m1=new QCheckBox();
 	checkBox_m2=new QCheckBox();
+	painti=new APaintWidget();
+
+	timer=new QTimer();
+	timer->setInterval(50);
 
 	label_m1 =new QLabel();
 	label_m1->setText("0");
@@ -46,6 +50,8 @@ myWindow::myWindow()
 	layout->addWidget(sld_m1, 2, 0);
 	layout->addWidget(label_m1, 2, 1);
 
+	layout->addWidget(painti, 3, 0, 3, 3);
+
 	layout->addWidget(checkBox_m2, 0, 2);
 	layout->addWidget(comboBox_m2, 1, 2);
 	layout->addWidget(sld_m2, 2, 2);
@@ -62,6 +68,9 @@ myWindow::myWindow()
 	QObject::connect(checkBox_m2, SIGNAL (stateChanged(int)), this, SLOT(OnCheckboxClicked_M2(int)));
 	QObject::connect(comboBox_m2, SIGNAL (currentIndexChanged(int)),this, SLOT(OnDirectionChanged_M2(int)));
 	QObject::connect(sld_m2, SIGNAL (valueChanged(int)),this, SLOT(OnSliderMoved_M2(int)));
+
+	QObject::connect(timer, SIGNAL (timeout()), this, SLOT(UpdateGUI()));
+	timer->start();
 
 }
 
@@ -151,4 +160,11 @@ void myWindow::OnSliderMoved_M2(int i)
 void myWindow::resetSlider(QSlider *slider) {
 	slider->setValue(0);
 }
-   
+
+void myWindow::UpdateGUI()
+{   
+
+	painti->amplitude0=sld_m1->value();
+	painti->amplitude1=sld_m2->value();
+	this->repaint();
+}

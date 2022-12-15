@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_myWindow_t {
-    QByteArrayData data[11];
-    char stringdata0[144];
+    QByteArrayData data[12];
+    char stringdata0[154];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -42,14 +42,15 @@ QT_MOC_LITERAL(6, 67, 5), // "state"
 QT_MOC_LITERAL(7, 73, 20), // "OnCheckboxClicked_M2"
 QT_MOC_LITERAL(8, 94, 21), // "OnDirectionChanged_M1"
 QT_MOC_LITERAL(9, 116, 5), // "index"
-QT_MOC_LITERAL(10, 122, 21) // "OnDirectionChanged_M2"
+QT_MOC_LITERAL(10, 122, 21), // "OnDirectionChanged_M2"
+QT_MOC_LITERAL(11, 144, 9) // "UpdateGUI"
 
     },
     "myWindow\0OnSliderMoved_M1\0\0i\0"
     "OnSliderMoved_M2\0OnCheckboxClicked_M1\0"
     "state\0OnCheckboxClicked_M2\0"
     "OnDirectionChanged_M1\0index\0"
-    "OnDirectionChanged_M2"
+    "OnDirectionChanged_M2\0UpdateGUI"
 };
 #undef QT_MOC_LITERAL
 
@@ -59,7 +60,7 @@ static const uint qt_meta_data_myWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   14, // methods
+       7,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -67,12 +68,13 @@ static const uint qt_meta_data_myWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,   44,    2, 0x0a /* Public */,
-       4,    1,   47,    2, 0x0a /* Public */,
-       5,    1,   50,    2, 0x0a /* Public */,
-       7,    1,   53,    2, 0x0a /* Public */,
-       8,    1,   56,    2, 0x0a /* Public */,
-      10,    1,   59,    2, 0x0a /* Public */,
+       1,    1,   49,    2, 0x0a /* Public */,
+       4,    1,   52,    2, 0x0a /* Public */,
+       5,    1,   55,    2, 0x0a /* Public */,
+       7,    1,   58,    2, 0x0a /* Public */,
+       8,    1,   61,    2, 0x0a /* Public */,
+      10,    1,   64,    2, 0x0a /* Public */,
+      11,    0,   67,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::Int,    3,
@@ -81,6 +83,7 @@ static const uint qt_meta_data_myWindow[] = {
     QMetaType::Void, QMetaType::Int,    6,
     QMetaType::Void, QMetaType::Int,    9,
     QMetaType::Void, QMetaType::Int,    9,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -97,6 +100,7 @@ void myWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 3: _t->OnCheckboxClicked_M2((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 4: _t->OnDirectionChanged_M1((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 5: _t->OnDirectionChanged_M2((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 6: _t->UpdateGUI(); break;
         default: ;
         }
     }
@@ -131,13 +135,13 @@ int myWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 7;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 7)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 6;
+        _id -= 7;
     }
     return _id;
 }

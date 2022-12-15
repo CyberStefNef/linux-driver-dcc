@@ -5,6 +5,8 @@
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
+#include "APaintWidget.h"
+#include <QtCore/QTimer>
 
 class myWindow : public QMainWindow{
     Q_OBJECT
@@ -18,7 +20,10 @@ public:
 	QComboBox *comboBox_m1;
 	QComboBox *comboBox_m2;
 	QLabel *label_m1; 
-	QLabel *label_m2; 
+	QLabel *label_m2;
+	APaintWidget *painti;
+	QTimer *timer;
+
 	myWindow();
 	
 	
@@ -29,6 +34,7 @@ public slots:
 	void OnCheckboxClicked_M2(int state);
 	void OnDirectionChanged_M1(int index);
 	void OnDirectionChanged_M2(int index);
+	void UpdateGUI();
 	
 private:
     void writeValues();
