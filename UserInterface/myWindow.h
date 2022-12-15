@@ -17,6 +17,8 @@ public:
 	QCheckBox *checkBox_m2;
 	QComboBox *comboBox_m1;
 	QComboBox *comboBox_m2;
+	QLabel *label_m1; 
+	QLabel *label_m2; 
 	myWindow();
 	
 	

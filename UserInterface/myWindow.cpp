@@ -18,6 +18,11 @@ myWindow::myWindow()
 	checkBox_m1=new QCheckBox();
 	checkBox_m2=new QCheckBox();
 
+	label_m1 =new QLabel();
+	label_m1->setText("0");
+
+	label_m2 =new QLabel();
+	label_m2->setText("0");
 
 	checkBox_m1->setText("Motor 1 aktivieren");
 	checkBox_m2->setText("Motor 2 aktivieren");
@@ -39,10 +44,12 @@ myWindow::myWindow()
 	layout->addWidget(checkBox_m1, 0, 0);
 	layout->addWidget(comboBox_m1, 1, 0);
 	layout->addWidget(sld_m1, 2, 0);
+	layout->addWidget(label_m1, 2, 1);
 
-	layout->addWidget(checkBox_m2, 0, 1);
-	layout->addWidget(comboBox_m2, 1, 1);
-	layout->addWidget(sld_m2, 2, 1);
+	layout->addWidget(checkBox_m2, 0, 2);
+	layout->addWidget(comboBox_m2, 1, 2);
+	layout->addWidget(sld_m2, 2, 2);
+	layout->addWidget(label_m2, 2, 3);
 
 	wdg->setLayout(layout);
 	this->setCentralWidget(wdg);
@@ -121,6 +128,7 @@ void myWindow::OnSliderMoved_M1(int i)
 		strus.speed = i;
 		strus.motor_address = 1;
 		strus.direction = comboBox_m1->currentIndex();
+		label_m1->setText(QString::number(i));
 		writeValues();
 		return;
 	}
@@ -133,6 +141,7 @@ void myWindow::OnSliderMoved_M2(int i)
 		strus.speed = i;
 		strus.motor_address = 2;
 		strus.direction = comboBox_m2->currentIndex();
+		label_m2->setText(QString::number(i));
 		writeValues();
 		return;
 	}
